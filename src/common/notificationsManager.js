@@ -36,7 +36,7 @@ class NotificationManager {
             }
         }
 
-        else if (!('serviceWorker') in navigator) {
+        else if (!('serviceWorker' in navigator)) {
             console.log("This browser does not support serviceWorkers.");
             return {
                 message: "El navegador no soporta serviceWorkers para las notificaciones",

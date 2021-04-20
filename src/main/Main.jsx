@@ -29,6 +29,7 @@ const Main = () => {
         }
         else {
             const response = await NotificationManager.unsubscribe()
+            console.log(response)
             setChecked(prev => !prev)
         }
 
