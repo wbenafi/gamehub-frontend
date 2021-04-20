@@ -2,7 +2,7 @@ import React from 'react';
 import Paper from '@material-ui/core/Paper';
 
 import './Main.css'
-import { Redirect, Route, BrowserRouter as Router, Switch as RouterSwitch } from 'react-router-dom';
+import { Redirect, Route, HashRouter as Router, Switch as RouterSwitch } from 'react-router-dom';
 import { AppBar, Switch, Toolbar, Typography } from '@material-ui/core';
 import NotificationManager from '../common/notificationsManager';
 
@@ -57,7 +57,7 @@ const Main = () => {
         <div style={{ display: "flex", height: "calc(100%)", backgroundColor: "#f5f5f5" }}>
 
             <Paper style={{ width: "calc(100% - 150px)", margin: "10px auto", overflow: "auto" }} elevation={3}>
-                <Router basename={'/gamehub-frontend'}>
+                <Router basename={'/gamehub-frontend'} >
                     <RouterSwitch>
                         <Route path="/games" exact={true}>
                             GAMES
