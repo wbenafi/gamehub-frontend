@@ -1,28 +1,36 @@
 import NotificationsAPI from "./notificationsAPI";
 
 
+navigator.serviceWorker.register('/service-worker.js')
+
 class NotificationManager {
 
-    static get subscribed(){
+    static get subscribed() {
         return new Promise((resolve) => {
-            navigator.serviceWorker.ready.then(
-                (serviceWorkerRegistration) => {
-                    serviceWorkerRegistration.pushManager.getSubscription().then(
-                        (subscription) => {
-                            if(subscription){
-                                resolve(true)
+            if (navigator.serviceWorker && navigator.serviceWorker.ready) {
+                navigator.serviceWorker.ready.then(
+                    (serviceWorkerRegistration) => {
+                        serviceWorkerRegistration.pushManager.getSubscription().then(
+                            (subscription) => {
+                                if (subscription) {
+                                    resolve(true)
+                                }
+                                else {
+                                    resolve(false)
+                                }
                             }
-                            else{
-                                resolve(false)
-                            }
-                        }
-                    ).catch(
-                        error => resolve(false)
-                    )
-                }
-            ).catch(
-                error => resolve(false)
-            )
+                        ).catch(
+                            error => resolve(false)
+                        )
+                    }
+                ).catch(
+                    error => resolve(false)
+                )
+            }
+            else {
+                console.log("a.no")
+                resolve(false)
+            }
         })
     }
 
@@ -59,7 +67,7 @@ class NotificationManager {
                 status: 0
             }
         }
-        
+
         return {
             message: "El navegador soporta las notificaciones",
             status: 1
@@ -68,7 +76,7 @@ class NotificationManager {
 
     static async askNotificationPermission() {
         const browserSupport = NotificationManager.checkBrowserSupport()
-        if(browserSupport.status === 0){
+        if (browserSupport.status === 0) {
             return browserSupport
         }
 
@@ -88,14 +96,15 @@ class NotificationManager {
     }
 
     static async subscribe() {
-        if(await NotificationManager.subscribed === true){
+        if (await NotificationManager.subscribed === true) {
             return {
                 message: "Ya se encuentra suscrito",
                 status: 0
             }
         }
+
         const permisson = await NotificationManager.askNotificationPermission()
-        if(permisson.status === 0) {
+        if (permisson.status === 0) {
             return permisson
         }
 
@@ -123,7 +132,7 @@ class NotificationManager {
             applicationServerKey: urlBase64ToUint8Array(
                 'BFp4VA9Bq1QWQpFVYL8mfQYgEq4BJXIYP3j7mjmMymlc8euQDJJBYTVGO3NEyjSc0TIsoIfbBXaya63duK8KoGY'
             )
-            })
+        })
 
         const subscription = await serviceWorkerRegistration.pushManager.getSubscription()
 
@@ -136,7 +145,7 @@ class NotificationManager {
     }
 
     static async unsubscribe() {
-        if(await NotificationManager.subscribed === false){
+        if (await NotificationManager.subscribed === false) {
             return
         }
         const serviceWorkerRegistration = await navigator.serviceWorker.ready
