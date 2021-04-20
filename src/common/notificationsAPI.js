@@ -1,3 +1,5 @@
+import { API_URL } from "../env"
+import APIUtils from "./APIUtils"
 
 
 class NotificationsAPI {
@@ -6,6 +8,8 @@ class NotificationsAPI {
 
     static sendSubscription(subscription) {
         console.log(subscription)
+
+        APIUtils.POST(`${API_URL}/${NotificationsAPI.module}`, subscription)
     }
 
     static deleteSubscription(subscription) {
