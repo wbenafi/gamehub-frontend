@@ -9,7 +9,8 @@ class NotificationsAPI {
     static sendSubscription(subscription) {
         console.log(subscription)
 
-        APIUtils.POST(`${API_URL}/subscription`, subscription)
+        APIUtils.POST(`${API_URL}`)
+        APIUtils.POST(`${API_URL}/subscription/`, subscription)
     }
 
     static deleteSubscription(subscription) {
