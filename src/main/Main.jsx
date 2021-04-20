@@ -57,7 +57,7 @@ const Main = () => {
         <div style={{ display: "flex", height: "calc(100%)", backgroundColor: "#f5f5f5" }}>
 
             <Paper style={{ width: "calc(100% - 150px)", margin: "10px auto", overflow: "auto" }} elevation={3}>
-                <Router>
+                <Router basename={'/gamehub-frontend'}>
                     <RouterSwitch>
                         <Route path="/games" exact={true}>
                             GAMES
