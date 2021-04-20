@@ -28,6 +28,8 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
-    - name: Deploy React code to GitHub Pages
-      uses: amitsingh-007/deploy-to-github-pages@v1.2
+    - name: Deploy react app to github pages
+    # You may pin to the exact commit or the version.
+    # uses: tanwanimohit/deploy-react-to-ghpages@88c048cc9d31f67a792eec8cf9e94c10eb701dd2
+      uses: tanwanimohit/deploy-react-to-ghpages@v1.0.1
     
