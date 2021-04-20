@@ -1,0 +1,25 @@
+.main-container {
+    width: 100%;
+    height: 100vh;
+    background-color: #ffffff8b;
+    overflow: hidden;
+    flex-grow: 1;
+}
+
+.appbar {
+    display: flex;
+}
+
+.main-title {
+    flex-grow: 1;
+    font-size: 28px !important;
+    text-align: start;
+    font-family: 'Germania One', cursive !important;
+}
+
+.toolbar-icon {
+    width: 45px;
+    height: 45px;
+    margin-right: 10px;
+    fill: white;
+}

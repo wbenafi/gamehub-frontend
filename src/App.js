@@ -1,24 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import { createMuiTheme, MuiThemeProvider } from '@material-ui/core';
+import Main from './main/Main';
 
 function App() {
+
+  const theme = createMuiTheme({
+    palette: {
+      primary: {
+        main: '#5A3E87'
+      },
+      secondary: {
+        main: '#FFFFFF'
+      }
+    }
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MuiThemeProvider theme={theme}>
+        <div className="App">
+          <Main></Main>
+        </div>
+    </MuiThemeProvider>
   );
 }
 
