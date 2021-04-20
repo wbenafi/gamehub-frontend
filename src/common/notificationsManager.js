@@ -108,8 +108,6 @@ class NotificationManager {
             return permisson
         }
 
-        await navigator.serviceWorker.register('/service-worker.js')
-
         const serviceWorkerRegistration = await navigator.serviceWorker.ready
 
         function urlBase64ToUint8Array(base64String) {
