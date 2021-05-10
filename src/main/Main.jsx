@@ -42,7 +42,7 @@ const Main = () => {
     return <div className="main-container">
         <AppBar position="static" className="appbar">
             <Toolbar style={{display: "flex", justifyContent: "space-between"}}>
-                <a href="/#/games" style={{display: "flex"}}>
+                <a href="#/games" style={{display: "flex"}}>
                     <img src="assets/images/white-icon-512x512.png" alt="" className="toolbar-icon" srcSet="assets/images/icon.svg"/>
                     <Typography variant="h6" className="main-title" >
                         gamehub
