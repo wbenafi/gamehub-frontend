@@ -1,0 +1,354 @@
+.games-container {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 30px;
+}
+
+.games-container-title {
+    color: var(--primary);
+    font-variant: small-caps;
+    font-size: 30px;
+    text-align: start;
+}
+
+.games-items-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.game-item-container {
+    width: 310px;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    justify-content: space-between;
+    padding: 0 !important;
+}
+
+.game-item-img {
+    object-fit: cover;
+    width: 142px;
+    height: 200px;
+    margin: 0;
+    border-radius: 4px 0 0 4px;
+}
+
+.game-item-title {
+    max-width: 80%;
+    margin: 10px auto;
+    cursor: pointer;
+    text-decoration: none;
+    color: rgb(71, 71, 71);
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.game-item-title:hover {
+    text-decoration: underline;
+}
+
+.game-item-details {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: visible;
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.game-item-discount-container {
+    width: 150px;
+    height: 60px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 3px;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    cursor: pointer;
+    text-decoration: none !important;
+}
+
+.game-item-discount-container:hover {
+    background-color: #5a3e8728;
+}
+
+.game-item-discount-price {
+    font-size: 30px;
+    font-weight: 800;
+    display: flex;
+    justify-content: space-around;
+}
+
+.game-item-discount-price span {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.game-item-discount-store {
+    font-size: 10px;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 5px 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.game-container>div:first-child{
+    height: 100%;
+    width: 30%;
+    min-width: 250px;
+    margin: auto;
+}
+
+.game-container>div:last-child{
+    height: 100%;
+    width: 65%;
+    margin: auto;
+    margin-top: 0;
+    min-width: 250px;
+}
+
+.game-container-title {
+    color: var(--primary);
+    font-variant: small-caps;
+    font-size: 30px;
+    text-align: start;
+}
+
+
+.game-img {
+    object-fit: cover;
+    width: 90%;
+    height: auto;
+    margin: auto;
+    border-radius: 5px;
+}
+
+.game-metacritic-container {
+    cursor: pointer;
+    border: 1px solid #fc3;
+    border-radius: 5px;
+    padding: 15px;
+    position: relative;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-metacritic-container>div {
+    cursor: pointer;
+    position: relative;
+    margin:  0px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-metacritic-container:hover {
+    background-color: #ffcc3310;
+}
+
+.game-metacritic-container img {
+    width: 50px;
+    position: absolute;
+    top: -20px;
+    left: -20px;
+}
+
+.game-metacritic-container h4 {
+    color: gray;
+    margin: 5px auto;
+}
+
+.game-metascore-container, .game-userscore-container {
+    width: 50px;
+    height: 50px;
+    background-color: #fc3;
+    font-size: 25px;
+    color: white;
+    font-family: Arial,Helvetica,sans-serif;
+    font-style: normal!important;
+    font-weight: bold!important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-metascore-container {
+    border-radius: 6px;
+}
+
+.game-userscore-container {
+    border-radius: 55%;
+}
+
+.game-metascore-container[score="nice"], .game-userscore-container[score="nice"] {
+    background-color: #6c3;
+}
+
+.game-metascore-container[score="bad"], .game-userscore-container[score="bad"] {
+    background-color: #f00;
+}
+
+.game-hltb-container {
+    cursor: pointer;
+    border: 1px solid rgb(77, 77, 77);
+    border-radius: 5px;
+    padding: 15px;
+    position: relative;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(36, 36, 36)
+}
+
+.game-hltb-container:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
+.game-hltb-container img {
+    width: 50px;
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    height: 50px;
+    background-color: black;
+    border-radius: 50%
+}
+
+.game-hltb-container h3 {
+    margin: 0;
+}
+
+.game-hltb-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.158);
+}
+
+.game-hltb-item:last-child {
+    border-bottom: none;
+}
+
+.game-hltb-item>div {
+    margin: 8px 10px
+}
+
+.game-hltb-item>div:last-child {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.game-stores-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border: 1px solid var(--primary);
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    padding-top: 20px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.game-stores-icon {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    background-color: var(--primary);
+    font-size: 40px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-store-item {
+    margin: 10px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.game-store-item:hover {
+    background-color: rgba(0, 0, 0, 0.048);
+}
+
+.game-store-item img {
+    width: 120px;
+    height: 70px;
+    object-fit: contain;
+}
+
+.game-store-price-details {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    font-size: 35px;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: -20px;
+}
+
+.game-store-price-details>span {
+    font-size: 25px;
+    color: gray;
+    font-weight: 600;
+}
+
+.game-store-price-details>div {
+    position: relative;
+    margin-left: 10px;
+}
+
+.game-store-price-details>div>div {
+    position: absolute;
+    text-decoration: line-through;
+    font-size: 15px;
+    color: rgb(75, 75, 75);
+    font-weight: 600;
+    top: -15px;
+    text-align: end;
+    right: 0;
+}
+
+
+
+@media (max-width: 768px) {
+    .game-store-item {
+        justify-content: space-around;
+    }
+
+    .game-store-price-details {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .game-metacritic-container {
+        width: 100%;
+    }
+
+    .game-hltb-container {
+        width: 100%;
+    }
+}

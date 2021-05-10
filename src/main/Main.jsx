@@ -5,6 +5,8 @@ import './Main.css'
 import { Redirect, Route, HashRouter as Router, Switch as RouterSwitch } from 'react-router-dom';
 import { AppBar, Switch, Toolbar, Typography } from '@material-ui/core';
 import NotificationManager from '../common/notificationsManager';
+import Games from '../games/Games';
+import Game from '../games/Game';
 
 
 const Main = () => {
@@ -40,12 +42,12 @@ const Main = () => {
     return <div className="main-container">
         <AppBar position="static" className="appbar">
             <Toolbar style={{display: "flex", justifyContent: "space-between"}}>
-                <div style={{display: "flex"}}>
+                <a href="/#/games" style={{display: "flex"}}>
                     <img src="assets/images/white-icon-512x512.png" alt="" className="toolbar-icon" srcSet="assets/images/icon.svg"/>
                     <Typography variant="h6" className="main-title" >
                         gamehub
                     </Typography>
-                </div>
+                </a>
                 <div style={{display: "flex"}}>
                     <span style={{marginRight: "10px"}}>
                         Notificaciones
@@ -54,16 +56,15 @@ const Main = () => {
                 </div>
             </Toolbar>
         </AppBar>
-        <div style={{ display: "flex", height: "calc(100%)", backgroundColor: "#f5f5f5" }}>
+        <div style={{ display: "flex", height: "min-content", backgroundColor: "#f5f5f5", paddingBottom: '50px' }}>
 
-            <Paper style={{ width: "calc(100% - 150px)", margin: "10px auto", overflow: "auto" }} elevation={3}>
+            <Paper style={{ width: "95%", margin: "10px auto", height: "min-content"}} elevation={3}>
                 <Router>
                     <RouterSwitch>
                         <Route path="/games" exact={true}>
-                            GAMES
+                            <Games></Games>
                         </Route>
-                        <Route path="/games/:id" exact={true}>
-                            Holis
+                        <Route path="/games/:id" exact={true} component={Game}>
                         </Route>
                         <Redirect path="" to="/games" />
                     </RouterSwitch>
