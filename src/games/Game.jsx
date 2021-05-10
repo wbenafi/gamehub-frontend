@@ -103,7 +103,7 @@ const Game = (props) => {
             </div>
             {Object.entries(game.stores).map(([store, info], i) => (
               <a
-                href={Object.values(game.stores_urls)[i]}
+                href={game.stores_urls[store]}
                 target="_blank"
                 rel="noreferrer"
                 style={{ textDecoration: "none !important" }}
