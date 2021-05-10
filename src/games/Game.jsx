@@ -41,7 +41,7 @@ const Game = (props) => {
               target="_blank"
               rel="noreferrer"
             >
-              <img src="/assets/images/hltb.png" alt="" />
+              <img src="assets/images/hltb.png" alt="" />
               <h3>{Object.keys(game.hltb[0])[1].replace("-", " ")}</h3>
 
               {game.hltb.map((value) => (
@@ -61,7 +61,7 @@ const Game = (props) => {
               target="_blank"
               rel="noreferrer"
             >
-              <img src="/assets/images/metacritic.png" alt="" />
+              <img src="assets/images/metacritic.png" alt="" />
               <div>
                 <h4>Metascore</h4>
                 <div
