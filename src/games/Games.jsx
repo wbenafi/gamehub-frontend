@@ -26,7 +26,7 @@ const Games = (props) => {
             const response = await GamesAPI.getGames()
             if (response.ok) {
                 const newGames = (await response.json()).data
-                const discountGames = await GamesAPI.getGamesWithDiscount(6, newGames)
+                const discountGames = await GamesAPI.getGamesWithDiscount(5, newGames)
                 GamesAPI.orderGamesStoresByPrice(newGames)
                 console.log(newGames)
                 setGames(newGames)
