@@ -4,15 +4,21 @@ import GamesAPI from './GamesAPI'
 
 import './Games.css'
 import GameItem from './GameItem'
-import { Paper } from '@material-ui/core'
+import { InputAdornment, OutlinedInput, Paper } from '@material-ui/core'
+import SearchIcon from '@material-ui/icons/Search';
+
+let gamesWithoutFilter = []
 
 const Games = (props) => {
+    const [filter, setFilter] = useState('')
 
     const [games, setGames] = useState([])
 
     const [gamesDiscount, setGamesDiscount] = useState([])
 
     const [loadingGames, setLoadingGames] = useState(false)
+
+    
 
     useEffect(() => {
         async function getGames() {
@@ -24,6 +30,7 @@ const Games = (props) => {
                 GamesAPI.orderGamesStoresByPrice(newGames)
                 console.log(newGames)
                 setGames(newGames)
+                gamesWithoutFilter = newGames;
 
                 setGamesDiscount(discountGames)
             }
@@ -31,6 +38,16 @@ const Games = (props) => {
         }
         getGames();
     }, [props])
+
+    useEffect(() => {
+        setGames(gamesWithoutFilter.filter(game => game.name.toLowerCase().includes(filter.toLowerCase())))
+    }, [filter])
+
+    const handleFilterInput = (e) => {
+        setFilter(e.target.value)
+    }
+
+
 
     return <div className="games-container">
         <h1 className="games-container-title">Mayores descuentos</h1>
@@ -46,7 +63,16 @@ const Games = (props) => {
                 )
             ) : null}
         </div>
-        <h1 className="games-container-title">Todos los juegos</h1>
+        <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap"}}>
+            <h1 className="games-container-title">Todos los juegos</h1>
+            <OutlinedInput placeholder="Buscar juego..." className="games-search" onChange={handleFilterInput} variant="outlined"
+            endAdornment={
+                <InputAdornment position="end">
+                    <SearchIcon></SearchIcon>
+                </InputAdornment>
+              }
+            style={{margin: "auto 0", width: "50%", minWidth: "200px"}}></OutlinedInput>
+        </div>
         <div className="games-items-container">
             {games.map(game => (
                 <GameItem key={game.id} game={game}></GameItem>

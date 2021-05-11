@@ -6,23 +6,27 @@ import { Paper } from "@material-ui/core";
 const Game = (props) => {
   const [game, setGame] = useState({ stores: {} });
 
+  const [loading, setLoading] = useState(false);
+
   const id = props.match.params.id;
 
   useEffect(() => {
     async function getGame() {
+      setLoading(true);
       const response = await GamesAPI.get(id);
       if (response.ok) {
         let gameInfo = await response.json();
         GamesAPI.orderGamesStoresByPrice([gameInfo]);
         setGame(gameInfo);
       }
+      setLoading(false);
     }
     getGame();
   }, [id]);
 
   console.log(game);
 
-  return (
+  return !loading ? (
     <div className="game-container">
       <div>
         <img
@@ -135,6 +139,15 @@ const Game = (props) => {
             ))}
           </div>
         </div>
+      </div>
+    </div>
+  ) : (
+    <div className="game-container">
+      <div>
+        <div className="game-img loading"></div>
+      </div>
+      <div>
+        <div className="game-container-title loading" style={{width: '80%', height: '64px'}}></div>
       </div>
     </div>
   );

@@ -36,13 +36,13 @@
 }
 
 .game-item-title {
-    max-width: 80%;
+    max-width: 90%;
     margin: 10px auto;
     cursor: pointer;
     text-decoration: none;
     color: rgb(71, 71, 71);
     font-weight: 600;
-    font-size: 24px;
+    font-size: 20px;
 }
 
 .game-item-title:hover {
@@ -96,7 +96,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 5px 30px;
+    padding: 20px 30px;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -130,6 +130,10 @@
     height: auto;
     margin: auto;
     border-radius: 5px;
+}
+
+.game-img.loading {
+    height: 400px;
 }
 
 .game-metacritic-container {
