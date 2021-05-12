@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/gamehub-frontend/static/css/main.6acc698c.chunk.css",
+    "main.js": "/gamehub-frontend/static/js/main.e4c1b6f1.chunk.js",
+    "main.js.map": "/gamehub-frontend/static/js/main.e4c1b6f1.chunk.js.map",
+    "runtime-main.js": "/gamehub-frontend/static/js/runtime-main.2e1c7c9c.js",
+    "runtime-main.js.map": "/gamehub-frontend/static/js/runtime-main.2e1c7c9c.js.map",
+    "static/js/2.2fffce95.chunk.js": "/gamehub-frontend/static/js/2.2fffce95.chunk.js",
+    "static/js/2.2fffce95.chunk.js.map": "/gamehub-frontend/static/js/2.2fffce95.chunk.js.map",
+    "static/js/3.d92b376d.chunk.js": "/gamehub-frontend/static/js/3.d92b376d.chunk.js",
+    "static/js/3.d92b376d.chunk.js.map": "/gamehub-frontend/static/js/3.d92b376d.chunk.js.map",
+    "index.html": "/gamehub-frontend/index.html",
+    "static/css/main.6acc698c.chunk.css.map": "/gamehub-frontend/static/css/main.6acc698c.chunk.css.map",
+    "static/js/2.2fffce95.chunk.js.LICENSE.txt": "/gamehub-frontend/static/js/2.2fffce95.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2e1c7c9c.js",
+    "static/js/2.2fffce95.chunk.js",
+    "static/css/main.6acc698c.chunk.css",
+    "static/js/main.e4c1b6f1.chunk.js"
+  ]
+}
